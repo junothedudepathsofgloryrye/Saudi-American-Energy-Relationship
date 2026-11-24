@@ -18,7 +18,7 @@
 
 ## Master Synthesis: Connecting Crude Independence, Price Risk & Arms Asymmetry
 
-<img src=\"{{ '/Charts/0-US-Saudi-Energy-Security-Synthesis.png' | relative_url }}\" alt=\"U.S.-Saudi Energy Security Synthesis\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![U.S.-Saudi Energy Security Synthesis](Charts/0-US-Saudi-Energy-Security-Synthesis.png)
 
 > **Synthesis Takeaway:** Taken together, these four indicators expose the core asymmetry of the contemporary U.S.–Saudi bargain: while U.S. physical reliance on Saudi crude collapsed after 2001 and domestic net-exporter status in 2019 insulated physical supply, global oil prices remain exposed to kinetic threats around Saudi energy nodes—even as Riyadh relies on Washington for 77% of its major arms imports.
 
@@ -41,7 +41,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 1. U.S. Crude Imports: Saudi Arabia vs. Canada
 
-<img src=\"{{ '/Charts/1-US-Crude-Imports-Saudi-vs-Canada.png' | relative_url }}\" alt=\"U.S. Crude Oil Imports: Canada vs. Saudi Arabia\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![U.S. Crude Oil Imports: Canada vs. Saudi Arabia](Charts/1-US-Crude-Imports-Saudi-vs-Canada.png)
 
 > **Analytical Takeaway:** Canadian crude imports overtook Saudi shipments by 2001 and steadily displaced Gulf barrels in U.S. refineries, fundamentally eroding Saudi Arabia’s bilateral leverage over physical U.S. supply security.
 
@@ -51,7 +51,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 2. U.S. Total Crude Net Imports & Net-Exporter Shift
 
-<img src=\"{{ '/Charts/2-US-Crude-Net-Exporter-Shift.png' | relative_url }}\" alt=\"U.S. Total Crude Oil Net Imports\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![U.S. Total Crude Oil Net Imports](Charts/2-US-Crude-Net-Exporter-Shift.png)
 
 > **Analytical Takeaway:** The U.S. structural shift toward net crude/energy exporter status around 2019 insulated domestic physical availability from Middle Eastern supply disruptions, even though U.S. fuel prices remain tied to global benchmark crude markets.
 
@@ -61,7 +61,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 3. Brent Crude Spot Prices & Shock Timeline
 
-<img src=\"{{ '/Charts/3-Brent-Crude-Price-Shocks.png' | relative_url }}\" alt=\"Brent Crude Monthly Spot Price\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![Brent Crude Monthly Spot Price](Charts/3-Brent-Crude-Price-Shocks.png)
 
 > **Analytical Takeaway:** Major geopolitical flashpoints and regional chokepoint threats rapidly inject risk premia into global Brent crude benchmarks, demonstrating that physical U.S. import independence does not shield Washington from global oil price volatility.
 
@@ -71,7 +71,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 4. Live GDELT Reporting & Proximity to Saudi Oil Infrastructure
 
-<img src=\"{{ '/Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png' | relative_url }}\" alt=\"Kinetic Events Near Saudi Oil Infrastructure\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
 
 > **Analytical Takeaway:** Kinetic and security incidents clustered near core Saudi oil infrastructure—including Abqaiq, Ras Tanura, Yanbu, Shaybah, and the East–West Pipeline—highlight persistent physical vulnerability at high-throughput nodes capable of moving global prices.
 
@@ -81,7 +81,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 5. SIPRI Saudi Arms Import Dependency
 
-<img src=\"{{ '/Charts/5-SIPRI-Saudi-Arms-Dependency.png' | relative_url }}\" alt=\"SIPRI Saudi Arms Dependency\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
+![SIPRI Saudi Arms Dependency](Charts/5-SIPRI-Saudi-Arms-Dependency.png)
 
 > **Analytical Takeaway:** With the United States supplying 77.0% of Saudi major arms transfers (2021–2025), Riyadh faces deep operational and sustainment dependence on U.S. defense platforms even as it hedges diplomatically and commercially toward non-U.S. partners.
 

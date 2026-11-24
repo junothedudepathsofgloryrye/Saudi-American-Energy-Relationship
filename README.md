@@ -20,6 +20,8 @@
 
 ![U.S.-Saudi Energy Security Synthesis](Charts/0-US-Saudi-Energy-Security-Synthesis.png)
 
+> **Synthesis Takeaway:** Taken together, these four indicators expose the core asymmetry of the contemporary U.S.–Saudi bargain: while U.S. physical reliance on Saudi crude collapsed after 2001 and domestic net-exporter status in 2019 insulated physical supply, global oil prices remain exposed to kinetic threats around Saudi energy nodes—even as Riyadh relies on Washington for 77% of its major arms imports.
+
 - **Unified Master Dataset:** `Data-Spreadsheets/Master-US-Saudi-Security-Matrix.csv` (harmonizes EIA crude imports, U.S. crude balance, Brent spot prices, live GDELT infrastructure proximity, and SIPRI arms shares on a single annual index).
 
 ---
@@ -51,6 +53,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ![U.S. Crude Oil Imports: Canada vs. Saudi Arabia](Charts/1-US-Crude-Imports-Saudi-vs-Canada.png)
 
+> **Analytical Takeaway:** Canadian crude imports overtook Saudi shipments by 2001 and steadily displaced Gulf barrels in U.S. refineries, fundamentally eroding Saudi Arabia’s bilateral leverage over physical U.S. supply security.
+
 - **Data File:** `Data-Spreadsheets/US-Crude-Imports-Saudi-vs-Canada-1990-2026.csv`
 
 </details>
@@ -64,6 +68,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <br>
 
 ![U.S. Total Crude Oil Net Imports](Charts/2-US-Crude-Net-Exporter-Shift.png)
+
+> **Analytical Takeaway:** The U.S. structural shift toward net crude/energy exporter status around 2019 insulated domestic physical availability from Middle Eastern supply disruptions, even though U.S. fuel prices remain tied to global benchmark crude markets.
 
 - **Data File:** `Data-Spreadsheets/US-Total-Crude-Net-Imports-1990-2026.csv`
 
@@ -79,6 +85,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ![Brent Crude Monthly Spot Price](Charts/3-Brent-Crude-Price-Shocks.png)
 
+> **Analytical Takeaway:** Major geopolitical flashpoints and regional chokepoint threats rapidly inject risk premia into global Brent crude benchmarks, demonstrating that physical U.S. import independence does not shield Washington from global oil price volatility.
+
 - **Data File:** `Data-Spreadsheets/Brent-Crude-Monthly-Spot-Prices-2019-2026.csv`
 
 </details>
@@ -93,6 +101,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
 
+> **Analytical Takeaway:** Kinetic and security incidents clustered near core Saudi oil infrastructure—including Abqaiq, Ras Tanura, Yanbu, Shaybah, and the East–West Pipeline—highlight persistent physical vulnerability at high-throughput nodes capable of moving global prices.
+
 - **Data File:** `Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv`
 
 </details>
@@ -106,6 +116,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <br>
 
 ![SIPRI Saudi Arms Dependency](Charts/5-SIPRI-Saudi-Arms-Dependency.png)
+
+> **Analytical Takeaway:** With the United States supplying 77.0% of Saudi major arms transfers (2021–2025), Riyadh faces deep operational and sustainment dependence on U.S. defense platforms even as it hedges diplomatically and commercially toward non-U.S. partners.
 
 - **Data File:** `Data-Spreadsheets/SIPRI-Saudi-Arms-Imports-Share-2021-2025.csv`
 

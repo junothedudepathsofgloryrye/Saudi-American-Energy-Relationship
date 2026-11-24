@@ -1,8 +1,6 @@
 import os, math, requests, pandas as pd, numpy as np, matplotlib.pyplot as plt, matplotlib.ticker as ticker
 os.makedirs("Charts", exist_ok=True); os.makedirs("Data-Spreadsheets", exist_ok=True)
 EIA_KEY = os.getenv("EIA_API_KEY", "rDdMKGPLzfChtQJWJJn9m7cfkqzKwRGk8NwwtN7M")
-ACLED_EMAIL = os.getenv("ACLED_EMAIL", "skyelor.gardner@outlook.com")
-ACLED_PASS = os.getenv("ACLED_PASSWORD", "N7?Bf3.2jfGvsnQ")
 INFRA_NODES = {"Abqaiq": (25.9267, 49.6808), "Ras Tanura": (26.6439, 50.1592), "Yanbu": (23.9889, 38.2214), "East-West Pipeline": (24.7500, 44.5000), "Shaybah": (22.5167, 53.9500)}
 def cite(fig, t): fig.text(0.01, 0.012, t, ha="left", va="bottom", fontsize=8, color="#444444", style="italic")
 def hav(lat1, lon1, lat2, lon2):
@@ -21,8 +19,7 @@ r3 = requests.get("https://api.eia.gov/v2/petroleum/pri/spt/data/", params={"api
 if r3:
     d3 = pd.DataFrame(r3); d3["Brent"] = pd.to_numeric(d3["value"], errors="coerce"); o3 = d3[["period","Brent"]].dropna().sort_values("period")
     o3.to_csv("Data-Spreadsheets/Brent-Crude-Monthly-Spot-Prices-2019-2026.csv", index=False)
-    fig, ax = plt.subplots(figsize=(12.5,5.8))
-    ax.plot(o3["period"], o3["Brent"], lw=2.3, color="#1f4e78"); ax.set_xticks(o3["period"][::6]); ax.tick_params(axis="x", rotation=45)
+    fig, ax = plt.subplots(figsize=(12.5,5.8)); ax.plot(o3["period"], o3["Brent"], lw=2.3, color="#1f4e78"); ax.set_xticks(o3["period"][::6]); ax.tick_params(axis="x", rotation=45)
     ax.set_title("Brent Crude Monthly Spot Price (2019-2026)", fontsize=12, fontweight="bold"); ax.set_ylabel("USD per Barrel ($/bbl)"); ax.grid(axis="y", ls="--", alpha=0.4)
     cite(fig, "Source: U.S. EIA Open Data API v2 (petroleum/pri/spt, Series RBRTE), 2019-2026.")
     plt.tight_layout(rect=[0,0.04,1,1]); plt.savefig("Charts/3-Brent-Crude-Price-Shocks.png", dpi=300); plt.close(); print("Saved Chart 3")
@@ -48,15 +45,14 @@ if r2:
     ax.set_ylabel(str(d2["units"].iloc[0])); ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}")); ax.grid(axis="y", ls="--", alpha=0.4)
     cite(fig, "Source: U.S. EIA Open Data API v2 (petroleum/sum/snd, EPC0), 1990-2026.")
     plt.tight_layout(rect=[0,0.04,1,1]); plt.savefig("Charts/2-US-Crude-Net-Exporter-Shift.png", dpi=300); plt.close(); print("Saved Chart 2")
-try:
-    tok = requests.post("https://acleddata.com/oauth/token", data={"username":ACLED_EMAIL,"password":ACLED_PASS,"grant_type":"password","client_id":"acled"}, timeout=60).json().get("access_token")
-    ev = pd.DataFrame(requests.get("https://acleddata.com/api/acled/read", headers={"Authorization": "Bearer " + str(tok)}, params={"country":"Saudi Arabia","event_date":"2019-01-01|2026-11-30","event_date_where":"BETWEEN","limit":5000}, timeout=60).json().get("data",[]))
+ev_path = "Data-Spreadsheets/ACLED-Saudi-Kinetic-Events-2019-2026.csv"
+if os.path.exists(ev_path):
+    ev = pd.read_csv(ev_path)
     if not ev.empty:
         ev["lat"] = pd.to_numeric(ev["latitude"], errors="coerce"); ev["lon"] = pd.to_numeric(ev["longitude"], errors="coerce")
         ev["Year"] = pd.to_datetime(ev["event_date"]).dt.year
         ev["Min_Dist_km"] = ev.apply(lambda r: np.nan if (pd.isna(r["lat"]) or pd.isna(r["lon"])) else min(hav(r["lat"],r["lon"],la,lo) for la,lo in INFRA_NODES.values()), axis=1)
         ev["Within_5km"] = ev["Min_Dist_km"] <= 5.0
-        ev.to_csv("Data-Spreadsheets/ACLED-Saudi-Kinetic-Events-2019-2026.csv", index=False)
         yc = ev.groupby(["Year","Within_5km"]).size().unstack(fill_value=0)
         for c in [False,True]:
             if c not in yc.columns: yc[c] = 0
@@ -64,8 +60,6 @@ try:
         fig, ax = plt.subplots(figsize=(11.5,5.8)); yc.plot(kind="bar", stacked=True, ax=ax, color=["#b22222","#1f4e78"], width=0.6)
         ax.set_title("Kinetic Events in Saudi Arabia by Proximity to Oil Infrastructure (2019-2026)", fontsize=11.5, fontweight="bold")
         ax.set_ylabel("Events"); ax.tick_params(axis="x", rotation=0); ax.grid(axis="y", ls="--", alpha=0.4)
-        cite(fig, "Source: ACLED API (country=Saudi Arabia), Haversine Distance to Saudi Oil Nodes, 2019-2026.")
+        cite(fig, "Source: ACLED Dataset (Saudi Arabia), Haversine Distance to Saudi Oil Nodes, 2019-2026.")
         plt.tight_layout(rect=[0,0.04,1,1]); plt.savefig("Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png", dpi=300); plt.close(); print("Saved Chart 4")
-except Exception as e:
-    print("ACLED note:", e)
 print("CHARTS PRESENT:", os.listdir("Charts"))

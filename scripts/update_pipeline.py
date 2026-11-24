@@ -82,3 +82,9 @@ if not df_g.empty:
 print("CHARTS PRESENT:", sorted(os.listdir("Charts")))
 
 import subprocess; subprocess.run(["python3", "-u", "scripts/build_synthesis.py"], check=False)
+
+import re
+rm = open("README.md", encoding="utf-8").read().replace(" -> ", " → ")
+idx = re.sub(r"<details[^>]*>|</details>|<summary>.*?</summary>", "", rm, flags=re.DOTALL)
+idx = re.sub(r"!\[([^\]]*)\]\((Charts/[^)\s]+)\)", r"<img src=\"{{ '/\2' | relative_url }}\" alt=\"\1\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">", idx)
+open("index.md", "w", encoding="utf-8").write(re.sub(r"\n{3,}", "\n\n", idx).strip() + "\n")

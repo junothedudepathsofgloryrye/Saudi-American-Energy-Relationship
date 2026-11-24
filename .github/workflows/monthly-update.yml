@@ -26,8 +26,6 @@ jobs:
       - name: Run data and chart pipeline
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
-          ACLED_EMAIL: ${{ secrets.ACLED_EMAIL }}
-          ACLED_PASSWORD: ${{ secrets.ACLED_PASSWORD }}
           CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
         run: python3 scripts/update_pipeline.py
 

@@ -1,0 +1,42 @@
+name: Monthly U.S.-Saudi Energy Security Pipeline Update
+
+on:
+  schedule:
+    - cron: "0 8 15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pandas numpy matplotlib requests tabulate
+
+      - name: Run data and chart pipeline
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          ACLED_EMAIL: ${{ secrets.ACLED_EMAIL }}
+          ACLED_PASSWORD: ${{ secrets.ACLED_PASSWORD }}
+          CONGRESS_API_KEY: ${{ secrets.CONGRESS_API_KEY }}
+        run: python3 scripts/update_pipeline.py
+
+      - name: Commit and push updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Charts Data-Spreadsheets
+          if ! git diff --staged --quiet; then
+            git commit -m "Automated monthly energy security data and chart update"
+            git push
+          fi

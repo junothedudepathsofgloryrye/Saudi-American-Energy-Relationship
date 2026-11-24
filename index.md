@@ -28,8 +28,6 @@
 
 ## Strategic Analysis: What Happened, What It Means & Where We Are Going
 
-<br>
-
 ### 1. What Happened
 Since the 1970s oil shocks, U.S. reliance on Middle Eastern crude has steadily declined as Canadian imports expanded and U.S. domestic production surged to net-exporter status around 2019. Simultaneously, Saudi Arabia has diversified economic and diplomatic ties—most notably with China—and moved away from automatic oil output accommodation, while facing recurring drone, missile, and maritime threats affecting chokepoints and energy facilities.
 
@@ -43,8 +41,6 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 1. U.S. Crude Imports: Saudi Arabia vs. Canada
 
-<br>
-
 <img src=\"{{ '/Charts/1-US-Crude-Imports-Saudi-vs-Canada.png' | relative_url }}\" alt=\"U.S. Crude Oil Imports: Canada vs. Saudi Arabia\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
 
 > **Analytical Takeaway:** Canadian crude imports overtook Saudi shipments by 2001 and steadily displaced Gulf barrels in U.S. refineries, fundamentally eroding Saudi Arabia’s bilateral leverage over physical U.S. supply security.
@@ -54,8 +50,6 @@ Both staying the course and pulling back carry costs: maintaining security commi
 ---
 
 ## 2. U.S. Total Crude Net Imports & Net-Exporter Shift
-
-<br>
 
 <img src=\"{{ '/Charts/2-US-Crude-Net-Exporter-Shift.png' | relative_url }}\" alt=\"U.S. Total Crude Oil Net Imports\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
 
@@ -67,8 +61,6 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 3. Brent Crude Spot Prices & Shock Timeline
 
-<br>
-
 <img src=\"{{ '/Charts/3-Brent-Crude-Price-Shocks.png' | relative_url }}\" alt=\"Brent Crude Monthly Spot Price\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
 
 > **Analytical Takeaway:** Major geopolitical flashpoints and regional chokepoint threats rapidly inject risk premia into global Brent crude benchmarks, demonstrating that physical U.S. import independence does not shield Washington from global oil price volatility.
@@ -79,8 +71,6 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 4. Live GDELT Reporting & Proximity to Saudi Oil Infrastructure
 
-<br>
-
 <img src=\"{{ '/Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png' | relative_url }}\" alt=\"Kinetic Events Near Saudi Oil Infrastructure\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
 
 > **Analytical Takeaway:** Kinetic and security incidents clustered near core Saudi oil infrastructure—including Abqaiq, Ras Tanura, Yanbu, Shaybah, and the East–West Pipeline—highlight persistent physical vulnerability at high-throughput nodes capable of moving global prices.
@@ -90,8 +80,6 @@ Both staying the course and pulling back carry costs: maintaining security commi
 ---
 
 ## 5. SIPRI Saudi Arms Import Dependency
-
-<br>
 
 <img src=\"{{ '/Charts/5-SIPRI-Saudi-Arms-Dependency.png' | relative_url }}\" alt=\"SIPRI Saudi Arms Dependency\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">
 

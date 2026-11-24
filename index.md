@@ -26,7 +26,7 @@
 
 ## Strategic Analysis: What Happened, What It Means & Where We Are Going
 
-<details open>
+<details open markdown="1">
 <summary><strong>Click to Expand: Policy, Market & Security Thesis</strong></summary>
 <br>
 
@@ -45,7 +45,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 1. U.S. Crude Imports: Saudi Arabia vs. Canada
 
-<details open>
+<details open markdown="1">
 <summary><strong>Click to Expand: Chart & Dataset (1990-2026)</strong></summary>
 <br>
 

@@ -45,21 +45,40 @@ if r2:
     ax.set_ylabel(str(d2["units"].iloc[0])); ax.yaxis.set_major_formatter(ticker.StrMethodFormatter("{x:,.0f}")); ax.grid(axis="y", ls="--", alpha=0.4)
     cite(fig, "Source: U.S. EIA Open Data API v2 (petroleum/sum/snd, EPC0), 1990-2026.")
     plt.tight_layout(rect=[0,0.04,1,1]); plt.savefig("Charts/2-US-Crude-Net-Exporter-Shift.png", dpi=300); plt.close(); print("Saved Chart 2")
-ev_path = "Data-Spreadsheets/ACLED-Saudi-Kinetic-Events-2019-2026.csv"
-if os.path.exists(ev_path):
-    ev = pd.read_csv(ev_path)
-    if not ev.empty:
-        ev["lat"] = pd.to_numeric(ev["latitude"], errors="coerce"); ev["lon"] = pd.to_numeric(ev["longitude"], errors="coerce")
-        ev["Year"] = pd.to_datetime(ev["event_date"]).dt.year
-        ev["Min_Dist_km"] = ev.apply(lambda r: np.nan if (pd.isna(r["lat"]) or pd.isna(r["lon"])) else min(hav(r["lat"],r["lon"],la,lo) for la,lo in INFRA_NODES.values()), axis=1)
-        ev["Within_5km"] = ev["Min_Dist_km"] <= 5.0
-        yc = ev.groupby(["Year","Within_5km"]).size().unstack(fill_value=0)
-        for c in [False,True]:
-            if c not in yc.columns: yc[c] = 0
-        yc = yc[[True,False]]; yc.columns = ["Within 5 km of Oil Infrastructure","Other Events in KSA"]
-        fig, ax = plt.subplots(figsize=(11.5,5.8)); yc.plot(kind="bar", stacked=True, ax=ax, color=["#b22222","#1f4e78"], width=0.6)
-        ax.set_title("Kinetic Events in Saudi Arabia by Proximity to Oil Infrastructure (2019-2026)", fontsize=11.5, fontweight="bold")
-        ax.set_ylabel("Events"); ax.tick_params(axis="x", rotation=0); ax.grid(axis="y", ls="--", alpha=0.4)
-        cite(fig, "Source: ACLED Dataset (Saudi Arabia), Haversine Distance to Saudi Oil Nodes, 2019-2026.")
-        plt.tight_layout(rect=[0,0.04,1,1]); plt.savefig("Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png", dpi=300); plt.close(); print("Saved Chart 4")
-print("CHARTS PRESENT:", os.listdir("Charts"))
+gdelt_csv = "Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv"
+q = "(Abqaiq OR Ras Tanura OR Yanbu OR Shaybah OR Aramco OR pipeline) (attack OR strike OR drone OR missile OR security)"
+df_g = pd.DataFrame()
+try:
+    rg = requests.get("https://api.gdeltproject.org/api/v2/geo/geo", params={"query": q, "format": "geojson", "timespan": "3m"}, timeout=60)
+    feats = rg.json().get("features", []) if rg.status_code == 200 else []
+    rows = []
+    for f in feats:
+        coords = f.get("geometry", {}).get("coordinates", [])
+        if len(coords) >= 2:
+            lon, lat = float(coords[0]), float(coords[1])
+            props = f.get("properties", {})
+            dists = {k: hav(lat, lon, la, lo) for k, (la, lo) in INFRA_NODES.items()}
+            nearest = min(dists, key=dists.get)
+            rows.append({"name": props.get("name", ""), "lat": lat, "lon": lon, "nearest_node": nearest, "dist_km": round(dists[nearest], 2), "within_5km": dists[nearest] <= 5.0})
+    if rows:
+        df_g = pd.DataFrame(rows)
+        df_g.to_csv(gdelt_csv, index=False)
+    elif os.path.exists(gdelt_csv):
+        df_g = pd.read_csv(gdelt_csv)
+except Exception as e:
+    if os.path.exists(gdelt_csv): df_g = pd.read_csv(gdelt_csv)
+    print("GDELT note:", e)
+if not df_g.empty:
+    by_node = df_g.groupby(["nearest_node", "within_5km"]).size().unstack(fill_value=0)
+    for c in [True, False]:
+        if c not in by_node.columns: by_node[c] = 0
+    by_node = by_node[[True, False]]; by_node.columns = ["Within 5 km", "Beyond 5 km"]
+    fig, ax = plt.subplots(figsize=(11, 5.5))
+    by_node.plot(kind="bar", stacked=True, ax=ax, color=["#b22222", "#1f4e78"], width=0.55)
+    ax.set_title("Live GDELT Geolocated Reporting Near Saudi Oil Nodes (Last 3 Months)", fontsize=11.5, fontweight="bold")
+    ax.set_ylabel("Geolocated Reports"); ax.tick_params(axis="x", rotation=20); ax.grid(axis="y", ls="--", alpha=0.4)
+    cite(fig, "Source: GDELT 2.0 GEO API (live query), Haversine Distance to Saudi Oil Infrastructure Nodes.")
+    plt.tight_layout(rect=[0, 0.04, 1, 1]); plt.savefig("Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png", dpi=300); plt.close(); print("Saved Chart 4")
+print("CHARTS PRESENT:", sorted(os.listdir("Charts")))
+
+import subprocess; subprocess.run(["python3", "-u", "scripts/build_synthesis.py"], check=False)

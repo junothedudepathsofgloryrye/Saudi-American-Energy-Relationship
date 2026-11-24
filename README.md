@@ -16,6 +16,14 @@
 
 ---
 
+## Master Synthesis: Connecting Crude Independence, Price Risk & Arms Asymmetry
+
+![U.S.-Saudi Energy Security Synthesis](Charts/0-US-Saudi-Energy-Security-Synthesis.png)
+
+- **Unified Master Dataset:** `Data-Spreadsheets/Master-US-Saudi-Security-Matrix.csv` (harmonizes EIA crude imports, U.S. crude balance, Brent spot prices, live GDELT infrastructure proximity, and SIPRI arms shares on a single annual index).
+
+---
+
 ## Strategic Analysis: What Happened, What It Means & Where We Are Going
 
 <details open>

@@ -83,7 +83,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <summary><strong>Click to Expand: Chart & Dataset (2019-2026)</strong></summary>
 <br>
 
-![ACLED Saudi Oil Infrastructure Proximity](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
+> *Note on Chart 4:* Automated retrieval from `/api/acled/read` returned `403` (`Access denied`), so `Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png` is omitted until direct ACLED dataset access or a local CSV export is provided. Haversine infrastructure nodes and methodology remain documented below.
 
 - **Data File:** `Data-Spreadsheets/ACLED-Saudi-Kinetic-Events-2019-2026.csv`
 

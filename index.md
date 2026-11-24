@@ -22,9 +22,18 @@
 
 - **Live Telemetry Data File:** `Data-Spreadsheets/Live-Saudi-Shipping-Capacity-Brent.csv`
 
-### Live AIS Tankers Near Saudi Export Terminals (Ras Tanura & Persian Gulf)
-
-<iframe name="vesselfinder_saudi" id="vesselfinder_saudi" width="100%" height="460" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=8&lat=26.64&lon=50.16&width=100%25&height=460&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">Live AIS map requires an iframe-capable browser. Visit <a href="https://www.vesselfinder.com" target="_blank">www.vesselfinder.com</a>.</iframe>
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin:16px 0;">
+  <div style="flex:1 1 420px; border:1px solid #d0d7de; border-radius:8px; padding:12px; background:#f8fafc;">
+    <h3 style="margin-top:0; font-size:1.05rem;">East–West Pipeline (Petroline) &amp; Yanbu Red Sea Outlet</h3>
+    <p style="font-size:0.88rem; margin-bottom:8px;"><strong>Nameplate Capacity:</strong> ~5.0M b/d (Abqaiq &rarr; Yanbu) &middot; <strong>Role:</strong> Red Sea bypass outlet; live tanker loading at Yanbu proxies pipeline utilization (Aramco does not publish live SCADA flow rates).</p>
+    <iframe name="vesselfinder_yanbu" id="vesselfinder_yanbu" width="100%" height="380" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=9&lat=23.99&lon=38.22&width=100%25&height=380&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">AIS map requires iframe support.</iframe>
+  </div>
+  <div style="flex:1 1 420px; border:1px solid #d0d7de; border-radius:8px; padding:12px; background:#f8fafc;">
+    <h3 style="margin-top:0; font-size:1.05rem;">Gulf Export Terminals: Ras Tanura &amp; Ju&rsquo;aymah</h3>
+    <p style="font-size:0.88rem; margin-bottom:8px;"><strong>Export Capacity:</strong> ~7.0M b/d &middot; <strong>Role:</strong> Primary Saudi crude loading terminals; live VLCC queue density tracks active Gulf seaborne exports.</p>
+    <iframe name="vesselfinder_saudi" id="vesselfinder_saudi" width="100%" height="380" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=8&lat=26.64&lon=50.16&width=100%25&height=380&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">AIS map requires iframe support.</iframe>
+  </div>
+</div>
 
 ---
 

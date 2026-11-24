@@ -1,6 +1,3 @@
-Metric,Value,Unit,Period
-Saudi Gulf Export Capacity (Ras Tanura / Juaymah),7.0,MMbbl/d,2026-10
-Saudi Red Sea Bypass Capacity (East-West / Yanbu),5.0,MMbbl/d,2026-10
-Live Brent Spot Price (EIA RBRTE),123.93,USD/bbl,2026-10
-Live GDELT SA Energy/Maritime Reports (~6h),50.0,Reports,2026-10
-Live GDELT All SA Events (~6h),156.0,Events,2026-10
+Corridor,Capacity_MBD,Live_GDELT_Reports,Live_Brent_USD,Period
+East-West Pipeline (Abqaiq -> Yanbu Red Sea),5.0,0,123.93,2026-10
+Gulf Terminals (Ras Tanura / Juaymah),7.0,5,123.93,2026-10

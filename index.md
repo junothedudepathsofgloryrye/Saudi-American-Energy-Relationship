@@ -404,8 +404,8 @@ layout: none
   <!-- CHART 4 -->
   <section class="section-card">
     <h2>4. Live GDELT Reporting &amp; Proximity to Saudi Oil Infrastructure</h2>
-    <img class="chart-img" src="Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png" alt="Kinetic Events Near Saudi Oil Infrastructure" />
-    <div class="takeaway"><strong>Analytical Takeaway:</strong> Kinetic and security incidents clustered near core Saudi oil infrastructure—including Abqaiq, Ras Tanura, Yanbu, Shaybah, and the East–West Pipeline—highlight persistent physical vulnerability at high-throughput nodes capable of moving global prices.</div>
+    <img class="chart-img" src="Charts/4-Saudi-Export-Corridor-Capacity-and-Flows.png" alt="Saudi Maritime Export Corridors and Pipeline Bypass Capacity" />
+    <div class="takeaway"><strong>Analytical Takeaway:</strong> Saudi Arabia balances Gulf seaborne exports at Ras Tanura and Ju&rsquo;aymah (~7.0M b/d) against its 1,200 km East–West Pipeline (Petroline) outlet to Yanbu on the Red Sea (~5.0M b/d), linking physical maritime tanker flows directly to global Brent price sensitivity.</div>
     <div class="data-tag">Data File: <code>Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv</code></div>
   </section>
 

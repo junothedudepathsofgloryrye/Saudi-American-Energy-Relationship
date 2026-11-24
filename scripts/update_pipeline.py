@@ -78,7 +78,7 @@ if not df_g.empty:
     ax.set_title("Live GDELT Geolocated Reporting Near Saudi Oil Nodes (Last 3 Months)", fontsize=11.5, fontweight="bold")
     ax.set_ylabel("Geolocated Reports"); ax.tick_params(axis="x", rotation=20); ax.grid(axis="y", ls="--", alpha=0.4)
     cite(fig, "Source: GDELT 2.0 GEO API (live query), Haversine Distance to Saudi Oil Infrastructure Nodes.")
-    plt.tight_layout(rect=[0, 0.04, 1, 1]); plt.savefig("Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png", dpi=300); plt.close(); print("Saved Chart 4")
+    plt.tight_layout(rect=[0, 0.04, 1, 1]); plt.savefig("Charts/4-Saudi-Export-Corridor-Capacity-and-Flows.png", dpi=300); plt.close(); print("Saved Chart 4")
 print("CHARTS PRESENT:", sorted(os.listdir("Charts")))
 
 import subprocess; subprocess.run(["python3", "-u", "scripts/build_synthesis.py"], check=False)

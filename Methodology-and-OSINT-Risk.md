@@ -1,6 +1,6 @@
 # OSINT, Spatial Proximity & Energy Data Methodology
 
-> Technical documentation covering EIA crude trade and spot price series, ACLED conflict event ingestion, Haversine distance calculations to Saudi energy infrastructure, and arms transfer benchmarks.
+> Technical documentation covering EIA crude trade and spot price series, GDELT 2.0 & AIS Maritime conflict event ingestion, Haversine distance calculations to Saudi energy infrastructure, and arms transfer benchmarks.
 
 **Navigation:** [<- Back to Main Dashboard](README.md) · [Laws & Congressional Actions ->](Laws-and-Congressional-Actions.md)
 
@@ -20,13 +20,13 @@
 
 ---
 
-## 2. ACLED Spatial Proximity to Saudi Oil Infrastructure
+## 2. GDELT 2.0 & AIS Maritime Spatial Proximity to Saudi Oil Infrastructure
 
 <details open>
 <summary><strong>Click to Expand: Haversine Distance & Chokepoint Exposure</strong></summary>
 <br>
 
-- **Saudi Conflict Event Filtering:** Pulls Saudi Arabia conflict events from ACLED (`country=Saudi Arabia`) and standardizes coordinates, dates, actors, and event classifications.
+- **Saudi Conflict Event Filtering:** Pulls Saudi Arabia conflict events from GDELT 2.0 & AIS Maritime (`country=Saudi Arabia`) and standardizes coordinates, dates, actors, and event classifications.
 - **Haversine Distance to Energy Nodes:** Computes great-circle distance (`km`) from each event to key Saudi oil nodes (Abqaiq, Ras Tanura, Yanbu, the East-West pipeline corridor, and Shaybah) and flags strikes within `5 km`.
 - **Chokepoint & Pipeline Sensitivity:** Pairs proximity metrics with Hormuz/Bab Al-Mandeb risks and single-corridor pipeline exposure.
 

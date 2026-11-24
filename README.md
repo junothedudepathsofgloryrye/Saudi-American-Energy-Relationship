@@ -21,7 +21,7 @@
 > **Core Thesis:** As U.S. crude supply independence has grown and Saudi Arabia has hedged toward non-U.S. partners, the traditional U.S.-Saudi energy and security partnership faces rising structural strain—even as Saudi oil infrastructure remains critical to global price stability.
 
 - **U.S. Crude Shift & Import Displacement:** Canada overtook Saudi Arabia in U.S. crude oil imports (reaching 1.79M b/d by 2001), and the U.S. shifted to a net energy/crude exporter by 2019—reducing physical U.S. reliance on Saudi crude access even though supply shocks still affect global prices.
-- **Kinetic Risk Near Oil Infrastructure:** Live GDELT 2.0 and ACLED conflict monitoring show heightened security exposure near Saudi oil nodes, with direct hits on infrastructure like the East-West pipeline driving sharp oil price reactions.
+- **Kinetic Risk Near Oil Infrastructure:** Live GDELT 2.0 and GDELT 2.0 & AIS Maritime conflict monitoring show heightened security exposure near Saudi oil nodes, with direct hits on infrastructure like the East-West pipeline driving sharp oil price reactions.
 - **Asymmetric Arms Dependency vs. Hedging:** The U.S. accounts for 77% of Saudi Arabia's arms imports (2021–2025), creating deep operational reliance on U.S. equipment and sustainment, while Saudi Arabia diversifies ties with non-U.S. partners and ended unconditional production appeasement.
 
 ---
@@ -81,7 +81,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 4. Live GDELT Reporting & Proximity to Saudi Oil Infrastructure
 
-![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
+![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-Saudi-Export-Corridor-Capacity-and-Flows.png)
 
 > **Analytical Takeaway:** Kinetic and security incidents clustered near core Saudi oil infrastructure—including Abqaiq, Ras Tanura, Yanbu, Shaybah, and the East–West Pipeline—highlight persistent physical vulnerability at high-throughput nodes capable of moving global prices.
 

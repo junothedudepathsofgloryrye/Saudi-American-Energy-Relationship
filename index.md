@@ -10,11 +10,11 @@
 
 ### Red Sea Side (Yanbu Terminal)
 
-<iframe name="vesselfinder_redsea" id="vesselfinder_redsea" width="100%" height="400" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=9&lat=23.99&lon=38.22&width=100%25&height=400&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">Red Sea AIS feed unavailable.</iframe>
+<iframe name="vesselfinder_redsea" id="vesselfinder_redsea" width="100%" height="400" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=9&lat=23.99&lon=38.22&width=100%25&height=400&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false"></iframe>
 
 ### Persian Gulf Side (Ras Tanura & Ju'aymah)
 
-<iframe name="vesselfinder_gulf" id="vesselfinder_gulf" width="100%" height="400" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=8&lat=26.64&lon=50.16&width=100%25&height=400&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">Persian Gulf AIS feed unavailable.</iframe>
+<iframe name="vesselfinder_gulf" id="vesselfinder_gulf" width="100%" height="400" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=8&lat=26.64&lon=50.16&width=100%25&height=400&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false"></iframe>
 
 ---
 

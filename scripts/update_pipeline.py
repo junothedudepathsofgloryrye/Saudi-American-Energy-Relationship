@@ -95,3 +95,5 @@ with open("index.md", "r", encoding="utf-8") as f:
 if "vesselfinder.com/aismap" not in cur_idx:
     with open("index.md", "w", encoding="utf-8") as f:
         f.write(cur_idx.strip() + "\n" + live_map_html)
+
+subprocess.run(["python3", "-u", "scripts/build_live_saudi_panel.py"], check=False)

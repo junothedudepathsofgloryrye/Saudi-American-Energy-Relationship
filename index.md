@@ -212,6 +212,69 @@ layout: none
     }
     .feed-list a { color: var(--accent); text-decoration: none; }
 
+
+    /* 4-LINE INCIDENT STRIP UNDER QUAD */
+    .incident-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: -1.1rem 0 2.25rem 0;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+    .incident-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.15rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .incident-head h2 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .incident-rows {
+      display: flex;
+      flex-direction: column;
+    }
+    .inc-row {
+      display: grid;
+      grid-template-columns: 105px 96px 210px 1fr 190px;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.72rem 1.15rem;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.65);
+      font-size: 0.86rem;
+    }
+    .inc-row:last-child { border-bottom: none; }
+    .inc-row:hover { background: rgba(30, 41, 59, 0.55); }
+    @media (max-width: 920px) {
+      .inc-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    }
+    .inc-date { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); font-size: 0.8rem; }
+    .inc-tag {
+      display: inline-block;
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 0.18rem 0.45rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .tag-PIPELINE { color: #fbbf24; background: rgba(245, 158, 11, 0.14); border: 1px solid rgba(245, 158, 11, 0.35); }
+    .tag-PORT { color: #38bdf8; background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); }
+    .tag-TANKER { color: #f87171; background: rgba(239, 68, 68, 0.14); border: 1px solid rgba(239, 68, 68, 0.35); }
+    .inc-node { font-weight: 700; color: #e2e8f0; }
+    .inc-desc { color: #cbd5e1; }
+    .inc-desc a { color: #e2e8f0; text-decoration: none; }
+    .inc-desc a:hover { color: var(--accent); text-decoration: underline; }
+    .inc-impact { text-align: right; font-size: 0.78rem; font-weight: 600; color: var(--amber); }
+    @media (max-width: 920px) { .inc-impact { text-align: left; } }
+
     /* ANALYTICAL SECTIONS BELOW QUAD */
     .section-card {
       background: var(--surface);
@@ -369,6 +432,18 @@ layout: none
 
   </section>
 
+
+  <!-- 4-LINE SAUDI PIPELINE, PORT & TANKER INCIDENT GRAPHIC -->
+  <section class="incident-panel">
+    <div class="incident-head">
+      <h2>Recent Saudi Pipeline, Port &amp; Tanker Security Incidents (Latest 4 Events)</h2>
+      <span class="live-pill"><span class="live-dot"></span>GDELT 2.0 + Corridor Log</span>
+    </div>
+    <div class="incident-rows" id="incident-rows">
+      <div class="inc-row"><span class="inc-date">Syncing…</span><span class="inc-tag tag-PIPELINE">FEED</span><span class="inc-node">Saudi Energy Nodes</span><span class="inc-desc">Loading latest 4 pipeline, port, and Saudi-linked tanker reports…</span><span class="inc-impact">—</span></div>
+    </div>
+  </section>
+
   <!-- MASTER SYNTHESIS -->
   <section class="section-card">
     <h2>Master Synthesis: Connecting Crude Independence, Price Risk &amp; Arms Asymmetry</h2>
@@ -497,6 +572,34 @@ layout: none
     document.getElementById("ew-count").textContent = "Active";
   }
 })();
+
+// Load 4-Line Saudi Pipeline, Port & Tanker Incident Log
+(async function loadIncidentLog() {
+  const container = document.getElementById("incident-rows");
+  if (!container) return;
+  try {
+    const csv = await (await fetch("Data-Spreadsheets/Recent-Saudi-Maritime-Pipeline-Incidents.csv")).text();
+    const rows = csv.trim().split("\n").slice(1).filter(Boolean).slice(0, 4);
+    if (!rows.length) return;
+    container.innerHTML = rows.map(line => {
+      const cols = line.split(",");
+      const dt = cols[0] || "";
+      const cat = (cols[1] || "TANKER").trim().toUpperCase();
+      const node = cols[2] || "Saudi Corridor";
+      const url = cols[cols.length - 1] || "#";
+      const impact = cols[cols.length - 2] || "";
+      const summary = cols.slice(3, cols.length - 2).join(",");
+      return `<div class="inc-row">
+        <span class="inc-date">${dt}</span>
+        <span class="inc-tag tag-${cat}">${cat}</span>
+        <span class="inc-node">${node}</span>
+        <span class="inc-desc"><a href="${url}" target="_blank" rel="noopener">${summary}</a></span>
+        <span class="inc-impact">${impact}</span>
+      </div>`;
+    }).join("");
+  } catch (e) {}
+})();
+
 </script>
 </body>
 </html>

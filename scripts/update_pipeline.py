@@ -88,3 +88,10 @@ rm = open("README.md", encoding="utf-8").read().replace(" -> ", " → ")
 idx = re.sub(r"<details[^>]*>|</details>|<summary>.*?</summary>", "", rm, flags=re.DOTALL)
 idx = re.sub(r"!\[([^\]]*)\]\((Charts/[^)\s]+)\)", r"<img src=\"{{ '/\2' | relative_url }}\" alt=\"\1\" style=\"max-width:100%; height:auto; display:block; margin:14px 0;\">", idx)
 open("index.md", "w", encoding="utf-8").write(re.sub(r"\n{3,}", "\n\n", idx).strip() + "\n")
+
+live_map_html = """\n### Live AIS Tanker Tracking: Strait of Hormuz & Persian Gulf Export Corridor\n\n<iframe name="vesselfinder" id="vesselfinder" width="100%" height="500" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=7&lat=26.35&lon=55.80&width=100%25&height=500&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">Browser does not support embedded objects.<br/>Visit directly <a href="https://www.vesselfinder.com" target="_blank">www.vesselfinder.com</a></iframe>\n"""
+with open("index.md", "r", encoding="utf-8") as f:
+    cur_idx = f.read()
+if "vesselfinder.com/aismap" not in cur_idx:
+    with open("index.md", "w", encoding="utf-8") as f:
+        f.write(cur_idx.strip() + "\n" + live_map_html)

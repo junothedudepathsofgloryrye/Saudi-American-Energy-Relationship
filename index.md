@@ -10,18 +10,9 @@
 
 ![Live Saudi Export Corridor Snapshot](Charts/7-Live-Saudi-Shipping-Capacity-Brent.png)
 
-> **Live Saudi Market & Shipping Takeaway:** Saudi Arabia balances Gulf export terminals (Ras Tanura and Ju'aymah) against its Red Sea East–West pipeline outlet at Yanbu, while live Brent crude pricing and real-time Saudi maritime reporting track how physical export flows and security signals translate into global oil market pressure.
+> **Live Saudi Market & Shipping Takeaway:** Saudi Arabia balances Gulf export terminals (Ras Tanura and Ju'aymah, ~7.0M b/d) against its Red Sea East–West pipeline outlet at Yanbu (~5.0M b/d), while live Brent crude pricing and real-time Saudi maritime reporting track how physical export flows and security signals translate into global oil market pressure.
 
 - **Live Telemetry Data File:** `Data-Spreadsheets/Live-Saudi-Shipping-Capacity-Brent.csv`
-
-## Live Saudi Export Corridor, Maritime Activity & Brent Price
-
-![Live Saudi Export Corridor Snapshot](Charts/7-Live-Saudi-Shipping-Capacity-Brent.png)
-
-> **Live Saudi Market & Shipping Takeaway:** Saudi Arabia balances Gulf export terminals (Ras Tanura and Ju'aymah) against its Red Sea East–West pipeline outlet at Yanbu, while live Brent crude pricing and real-time Saudi maritime reporting track how physical export flows and security signals translate into global oil market pressure.
-
-- **Live Telemetry Data File:** `Data-Spreadsheets/Live-Saudi-Shipping-Capacity-Brent.csv`
-
 <div style="display:flex; flex-wrap:wrap; gap:16px; margin:16px 0;">
   <div style="flex:1 1 420px; border:1px solid #d0d7de; border-radius:8px; padding:12px; background:#f8fafc;">
     <h3 style="margin-top:0; font-size:1.05rem;">East–West Pipeline (Petroline) &amp; Yanbu Red Sea Outlet</h3>
@@ -42,8 +33,8 @@
 > **Core Thesis:** As U.S. crude supply independence has grown and Saudi Arabia has hedged toward non-U.S. partners, the traditional U.S.-Saudi energy and security partnership faces rising structural strain—even as Saudi oil infrastructure remains critical to global price stability.
 
 - **U.S. Crude Shift & Import Displacement:** Canada overtook Saudi Arabia in U.S. crude oil imports (reaching 1.79M b/d by 2001), and the U.S. shifted to a net energy/crude exporter by 2019—reducing physical U.S. reliance on Saudi crude access even though supply shocks still affect global prices.
-- **Kinetic Risk Near Oil Infrastructure:** ACLED data shows heightened conflict exposure in Saudi Arabia, including 305 foreign military engagements over the past year and 52 of 123 attacks between July and October 2026 occurring within 5 km of oil facilities, with direct hits on infrastructure like the East-West pipeline driving sharp oil price reactions.
-- **Asymmetric Arms Dependency vs. Hedging:** The U.S. accounts for 77% of Saudi Arabia's arms imports (as of 2025), creating deep operational reliance on U.S. equipment and sustainment, while Saudi Arabia exports 14.4% to China, engages with BRI/BRICS, settles some oil trades in RMB, and ended unconditional production appeasement.
+- **Kinetic Risk Near Oil Infrastructure:** Live GDELT 2.0 and ACLED conflict monitoring show heightened security exposure near Saudi oil nodes, with direct hits on infrastructure like the East-West pipeline driving sharp oil price reactions.
+- **Asymmetric Arms Dependency vs. Hedging:** The U.S. accounts for 77% of Saudi Arabia's arms imports (2021–2025), creating deep operational reliance on U.S. equipment and sustainment, while Saudi Arabia diversifies ties with non-U.S. partners and ended unconditional production appeasement.
 
 ---
 
@@ -53,7 +44,7 @@
 
 > **Synthesis Takeaway:** Taken together, these four indicators expose the core asymmetry of the contemporary U.S.–Saudi bargain: while U.S. physical reliance on Saudi crude collapsed after 2001 and domestic net-exporter status in 2019 insulated physical supply, global oil prices remain exposed to kinetic threats around Saudi energy nodes—even as Riyadh relies on Washington for 77% of its major arms imports.
 
-- **Unified Master Dataset:** `Data-Spreadsheets/Master-US-Saudi-Security-Matrix.csv` (harmonizes EIA crude imports, U.S. crude balance, Brent spot prices, live GDELT infrastructure proximity, and SIPRI arms shares on a single annual index).
+- **Unified Master Dataset:** `Data-Spreadsheets/Master-US-Saudi-Security-Matrix.csv`
 
 ---
 
@@ -63,7 +54,7 @@
 Since the 1970s oil shocks, U.S. reliance on Middle Eastern crude has steadily declined as Canadian imports expanded and U.S. domestic production surged to net-exporter status around 2019. Simultaneously, Saudi Arabia has diversified economic and diplomatic ties—most notably with China—and moved away from automatic oil output accommodation, while facing recurring drone, missile, and maritime threats affecting chokepoints and energy facilities.
 
 ### 2. What It Means
-A disruption to Saudi infrastructure or chokepoints like Hormuz and Bab Al-Mandeb still moves global crude prices and can carry a steep geopolitical risk premium, yet physical U.S. crude access is far less vulnerable than in prior decades. Meanwhile, U.S. voters and lawmakers have grown more skeptical of open-ended Middle East military entanglement, creating friction over requests for U.S. security backing and arms transfers.
+A disruption to Saudi infrastructure or regional chokepoints still moves global crude prices and can carry a steep geopolitical risk premium, yet physical U.S. crude access is far less vulnerable than in prior decades. Meanwhile, U.S. voters and lawmakers have grown more skeptical of open-ended Middle East military entanglement, creating friction over requests for U.S. security backing and arms transfers.
 
 ### 3. Where We Are Going
 Both staying the course and pulling back carry costs: maintaining security commitments while Riyadh hedges with U.S. competitors risks paying to underwrite declining U.S. influence, whereas rapid or broad security withdrawal risks widening defense/sustainment gaps in Saudi Arabia and triggering higher oil price volatility and pump-price backlash at home.
@@ -86,7 +77,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 > **Analytical Takeaway:** The U.S. structural shift toward net crude/energy exporter status around 2019 insulated domestic physical availability from Middle Eastern supply disruptions, even though U.S. fuel prices remain tied to global benchmark crude markets.
 
-- **Data File:** `Data-Spreadsheets/US-Total-Crude-Net-Imports-1990-2026.csv`
+- **Data File:** `Data-Spreadsheets/US-Total-Crude-Balance-1990-2026.csv`
 
 ---
 
@@ -117,5 +108,3 @@ Both staying the course and pulling back carry costs: maintaining security commi
 > **Analytical Takeaway:** With the United States supplying 77.0% of Saudi major arms transfers (2021–2025), Riyadh faces deep operational and sustainment dependence on U.S. defense platforms even as it hedges diplomatically and commercially toward non-U.S. partners.
 
 - **Data File:** `Data-Spreadsheets/SIPRI-Saudi-Arms-Imports-Share-2021-2025.csv`
-
----

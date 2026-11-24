@@ -18,7 +18,7 @@
 
 ## Master Synthesis: Connecting Crude Independence, Price Risk & Arms Asymmetry
 
-![U.S.-Saudi Energy Security Synthesis](Charts/0-US-Saudi-Energy-Security-Synthesis.png)
+<img src=\"{{ '/Charts/0-US-Saudi-Energy-Security-Synthesis.png' | relative_url }}\" alt=\"U.S.-Saudi Energy Security Synthesis\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
 - **Unified Master Dataset:** `Data-Spreadsheets/Master-US-Saudi-Security-Matrix.csv` (harmonizes EIA crude imports, U.S. crude balance, Brent spot prices, live GDELT infrastructure proximity, and SIPRI arms shares on a single annual index).
 
@@ -26,7 +26,7 @@
 
 ## Strategic Analysis: What Happened, What It Means & Where We Are Going
 
-<details open markdown="1">
+<details open>
 <summary><strong>Click to Expand: Policy, Market & Security Thesis</strong></summary>
 <br>
 
@@ -45,13 +45,13 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ## 1. U.S. Crude Imports: Saudi Arabia vs. Canada
 
-<details open markdown="1">
+<details open>
 <summary><strong>Click to Expand: Chart & Dataset (1990-2026)</strong></summary>
 <br>
 
-![U.S. Crude Oil Imports: Canada vs. Saudi Arabia](Charts/1-US-Crude-Imports-Saudi-vs-Canada.png)
+<img src=\"{{ '/Charts/1-US-Crude-Imports-Saudi-vs-Canada.png' | relative_url }}\" alt=\"U.S. Crude Oil Imports: Canada vs. Saudi Arabia\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
-- **Data File:** `Data-Spreadsheets/US-Crude-Imports-Saudi-vs-Canada-1990-2026.csv`
+<ul><li><strong>Data File:</strong> <code>Data-Spreadsheets/US-Crude-Imports-Saudi-vs-Canada-1990-2026.csv</code></li></ul>
 
 </details>
 
@@ -63,9 +63,9 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <summary><strong>Click to Expand: Chart & Dataset (1990-2026)</strong></summary>
 <br>
 
-![U.S. Total Crude Oil Net Imports](Charts/2-US-Crude-Net-Exporter-Shift.png)
+<img src=\"{{ '/Charts/2-US-Crude-Net-Exporter-Shift.png' | relative_url }}\" alt=\"U.S. Total Crude Oil Net Imports\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
-- **Data File:** `Data-Spreadsheets/US-Total-Crude-Net-Imports-1990-2026.csv`
+<ul><li><strong>Data File:</strong> <code>Data-Spreadsheets/US-Total-Crude-Net-Imports-1990-2026.csv</code></li></ul>
 
 </details>
 
@@ -77,9 +77,9 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <summary><strong>Click to Expand: Chart & Dataset (2019-2026)</strong></summary>
 <br>
 
-![Brent Crude Monthly Spot Price](Charts/3-Brent-Crude-Price-Shocks.png)
+<img src=\"{{ '/Charts/3-Brent-Crude-Price-Shocks.png' | relative_url }}\" alt=\"Brent Crude Monthly Spot Price\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
-- **Data File:** `Data-Spreadsheets/Brent-Crude-Monthly-Spot-Prices-2019-2026.csv`
+<ul><li><strong>Data File:</strong> <code>Data-Spreadsheets/Brent-Crude-Monthly-Spot-Prices-2019-2026.csv</code></li></ul>
 
 </details>
 
@@ -91,9 +91,9 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <summary><strong>Click to Expand: Chart & Dataset (2019-2026)</strong></summary>
 <br>
 
-![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
+<img src=\"{{ '/Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png' | relative_url }}\" alt=\"Kinetic Events Near Saudi Oil Infrastructure\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
-- **Data File:** `Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv`
+<ul><li><strong>Data File:</strong> <code>Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv</code></li></ul>
 
 </details>
 
@@ -105,8 +105,8 @@ Both staying the course and pulling back carry costs: maintaining security commi
 <summary><strong>Click to Expand: Chart & Dataset (2021-2025)</strong></summary>
 <br>
 
-![SIPRI Saudi Arms Dependency](Charts/5-SIPRI-Saudi-Arms-Dependency.png)
+<img src=\"{{ '/Charts/5-SIPRI-Saudi-Arms-Dependency.png' | relative_url }}\" alt=\"SIPRI Saudi Arms Dependency\" style=\"max-width:100%; height:auto; margin:12px 0;\">
 
-- **Data File:** `Data-Spreadsheets/SIPRI-Saudi-Arms-Imports-Share-2021-2025.csv`
+<ul><li><strong>Data File:</strong> <code>Data-Spreadsheets/SIPRI-Saudi-Arms-Imports-Share-2021-2025.csv</code></li></ul>
 
 </details>

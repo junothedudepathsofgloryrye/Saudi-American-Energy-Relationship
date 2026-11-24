@@ -77,7 +77,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ---
 
-## 4. ACLED Kinetic Events & Proximity to Saudi Oil Infrastructure
+## 4. Live GDELT Reporting & Proximity to Saudi Oil Infrastructure
 
 <details>
 <summary><strong>Click to Expand: Chart & Dataset (2019-2026)</strong></summary>
@@ -85,7 +85,7 @@ Both staying the course and pulling back carry costs: maintaining security commi
 
 ![Kinetic Events Near Saudi Oil Infrastructure](Charts/4-ACLED-Saudi-Oil-Infrastructure-Proximity.png)
 
-- **Data File:** `Data-Spreadsheets/ACLED-Saudi-Kinetic-Events-2019-2026.csv`
+- **Data File:** `Data-Spreadsheets/Live-GDELT-Saudi-Oil-Infra-Proximity.csv`
 
 </details>
 

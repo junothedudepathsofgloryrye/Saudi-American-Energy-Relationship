@@ -86,3 +86,17 @@ Both staying the course and pulling back carry costs: maintaining security commi
 > **Analytical Takeaway:** With the United States supplying 77.0% of Saudi major arms transfers (2021–2025), Riyadh faces deep operational and sustainment dependence on U.S. defense platforms even as it hedges diplomatically and commercially toward non-U.S. partners.
 
 - **Data File:** `Data-Spreadsheets/SIPRI-Saudi-Arms-Imports-Share-2021-2025.csv`
+
+---
+
+## 6. Saudi Tanker Chokepoints, Bypass Capacity & Live Maritime Traffic
+
+![Saudi Maritime Export Flows & Strait of Hormuz Bypass Gap](Charts/6-Saudi-Chokepoint-Capacity-vs-Brent.png)
+
+> **Analytical Takeaway:** Roughly 20.5M b/d transits the Strait of Hormuz, while Saudi Arabia’s East–West Pipeline (Petroline) to Yanbu can divert at most ~5.0M b/d to the Red Sea—leaving a ~15.5M b/d structural bypass deficit that explains why even localized tanker harassment or chokepoint threats immediately trigger sharp global Brent risk premia.
+
+- **Data File:** `Data-Spreadsheets/Saudi-Chokepoint-Bypass-Capacity.csv`
+
+### Live AIS Tanker Tracking: Strait of Hormuz & Persian Gulf Export Corridor
+
+<iframe name="vesselfinder" id="vesselfinder" width="100%" height="500" frameborder="0" src="https://www.vesselfinder.com/aismap?zoom=7&lat=26.35&lon=55.80&width=100%25&height=500&names=false&mmsi=0&imo=0&track=false&fleet=&fleet_name=&fleet_timespan=1440&fleet_hide_old_positions=false&clicktoact=false&store_pos=true&ra=false">Browser does not support embedded objects.<br/>Visit directly <a href="https://www.vesselfinder.com" target="_blank">www.vesselfinder.com</a></iframe>

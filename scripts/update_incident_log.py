@@ -13,7 +13,7 @@ if os.path.exists(OUT_CSV):
     with open(OUT_CSV, encoding="utf-8") as f:
         existing_rows = list(csv.DictReader(f))
 
-query = '("Ras Tanura" OR "East-West pipeline" OR "Petroline" OR "Yanbu" OR "Jazan port" OR "Saudi tanker") (attack OR strike OR drone OR missile OR fire OR intercepted OR mine)'
+query = '("Ras Tanura" OR "East-West pipeline" OR "Petroline" OR "Yanbu" OR "Jazan port" OR "Hormuz") (attack OR strike OR drone OR missile OR fire OR intercepted OR mine)'
 params = urllib.parse.urlencode({
     "query": query,
     "mode": "ArtList",
@@ -40,9 +40,9 @@ try:
         if "pipeline" in low or "petroline" in low or "pumping station" in low:
             cat = "PIPELINE"
             node = "East-West Pipeline (Petroline)"
-        elif "tanker" in low or "vessel" in low or "hormuz" in low or "ship" in low:
+        elif "tanker" in low or "vessel" in low or "hormuz" in low or "mine" in low:
             cat = "TANKER"
-            node = "Red Sea / Gulf Tanker Corridor"
+            node = "Strait of Hormuz / Red Sea"
         else:
             cat = "PORT"
             node = "Ras Tanura" if "ras tanura" in low else ("Jazan Port" if "jazan" in low else ("Yanbu Terminal" if "yanbu" in low else "Saudi Export Terminal"))
@@ -76,4 +76,4 @@ with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
     writer.writeheader()
     writer.writerows(merged)
 
-print(f"Updated {OUT_CSV} with {len(merged)} rows ({len(live_rows)} live GDELT articles).")
+print(f"Wrote {len(merged)} rows to {OUT_CSV}")

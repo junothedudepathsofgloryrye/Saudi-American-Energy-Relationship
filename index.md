@@ -573,30 +573,66 @@ layout: none
   }
 })();
 
-// Load 4-Line Saudi Pipeline, Port & Tanker Incident Log
+// Load 4-Line Saudi Pipeline, Port & Tanker Incident Log (Live GDELT DOC API + CSV Fallback)
 (async function loadIncidentLog() {
   const container = document.getElementById("incident-rows");
   if (!container) return;
+
+  function renderRows(items) {
+    container.innerHTML = items.slice(0, 4).map(r => `
+      <div class="inc-row">
+        <span class="inc-date">${r.dt}</span>
+        <span class="inc-tag tag-${r.cat}">${r.cat}</span>
+        <span class="inc-node">${r.node}</span>
+        <span class="inc-desc"><a href="${r.url}" target="_blank" rel="noopener">${r.summary}</a></span>
+        <span class="inc-impact">${r.impact}</span>
+      </div>`).join("");
+  }
+
+  // 1. Render committed CSV immediately so there is zero blank flash
+  let fallbackItems = [];
   try {
-    const csv = await (await fetch("Data-Spreadsheets/Recent-Saudi-Maritime-Pipeline-Incidents.csv")).text();
-    const rows = csv.trim().split("\n").slice(1).filter(Boolean).slice(0, 4);
-    if (!rows.length) return;
-    container.innerHTML = rows.map(line => {
+    const csv = await (await fetch("Data-Spreadsheets/Recent-Saudi-Maritime-Pipeline-Incidents.csv?t=" + Date.now())).text();
+    const lines = csv.trim().split("\n").slice(1).filter(Boolean).slice(0, 4);
+    fallbackItems = lines.map(line => {
       const cols = line.split(",");
-      const dt = cols[0] || "";
-      const cat = (cols[1] || "TANKER").trim().toUpperCase();
-      const node = cols[2] || "Saudi Corridor";
-      const url = cols[cols.length - 1] || "#";
-      const impact = cols[cols.length - 2] || "";
-      const summary = cols.slice(3, cols.length - 2).join(",");
-      return `<div class="inc-row">
-        <span class="inc-date">${dt}</span>
-        <span class="inc-tag tag-${cat}">${cat}</span>
-        <span class="inc-node">${node}</span>
-        <span class="inc-desc"><a href="${url}" target="_blank" rel="noopener">${summary}</a></span>
-        <span class="inc-impact">${impact}</span>
-      </div>`;
-    }).join("");
+      return {
+        dt: cols[0] || "",
+        cat: (cols[1] || "TANKER").trim().toUpperCase(),
+        node: cols[2] || "Saudi Corridor",
+        summary: cols.slice(3, cols.length - 2).join(",").replace(/^"|"$/g, ""),
+        impact: cols[cols.length - 2] || "",
+        url: cols[cols.length - 1] || "#"
+      };
+    });
+    if (fallbackItems.length) renderRows(fallbackItems);
+  } catch (e) {}
+
+  // 2. Query live GDELT 2.0 DOC API for fresher headlines
+  try {
+    const q = encodeURIComponent('("Ras Tanura" OR "East-West pipeline" OR "Petroline" OR "Yanbu" OR "Jazan port") (attack OR strike OR drone OR missile OR fire OR intercepted)');
+    const gdeltUrl = `https://api.gdeltproject.org/api/v2/doc/doc?query=${q}&mode=ArtList&maxrecords=8&format=json&sort=DateDesc`;
+    const res = await fetch(gdeltUrl);
+    const data = await res.json();
+    const arts = (data.articles || []).slice(0, 4);
+    if (arts.length >= 2) {
+      const liveItems = arts.map(a => {
+        const low = (a.title || "").toLowerCase();
+        const cat = (low.includes("pipeline") || low.includes("petroline")) ? "PIPELINE" : ((low.includes("tanker") || low.includes("ship")) ? "TANKER" : "PORT");
+        const node = low.includes("ras tanura") ? "Ras Tanura Terminal" : (low.includes("jazan") ? "Jazan Red Sea Port" : (low.includes("yanbu") ? "Yanbu Corridor" : "Saudi Energy Node"));
+        const sd = (a.seendate || "").slice(0, 8);
+        const dt = sd.length === 8 ? `${sd.slice(0,4)}-${sd.slice(4,6)}-${sd.slice(6,8)}` : "LIVE";
+        return {
+          dt,
+          cat,
+          node,
+          summary: a.title,
+          impact: `Live (${a.domain || "GDELT"})`,
+          url: a.url
+        };
+      });
+      renderRows(liveItems);
+    }
   } catch (e) {}
 })();
 
